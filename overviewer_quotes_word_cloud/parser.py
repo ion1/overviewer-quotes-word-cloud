@@ -33,8 +33,8 @@ class OverviewerQuotes:
     def __init__(self):
         self.quotes = {}
 
-    def read(self, filename):
-        with io.open(filename, "rt", newline="\r\n") as f:
+    def read(self, filename, newline=None):
+        with io.open(filename, "rt", newline=newline) as f:
             self.read_handle(f)
 
     def read_handle(self, f):
