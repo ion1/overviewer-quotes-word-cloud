@@ -47,7 +47,7 @@ class OverviewerQuotes:
         text = re.sub(r"\[(?:[0-9]+:)?[0-9]{2}:[0-9]{2}\] ", "", text)
         text = re.sub(r"^Guest44 has joined #overviewer  ", "", text)
         text = re.sub(r"  Guest44 has left #overviewer$", "", text)
-        items = re.split("(?<! )  (?=<)", text)
+        items = re.split("(?<! )  (?=[<*])", text)
         for item in items:
             self.parse_item(item)
 
